@@ -1,0 +1,55 @@
+<%- include("partials/header.ejs") %>
+<% if(locals.blogTitle && locals.blogContent && locals.blogDate && locals.blogId ){ 
+
+   for(var i=0; i<blogId.length; i++){%>
+<div class="blogcontainer">     
+    <div class="card" style="width: 100%;">
+  <div class="card-body ">
+    <h5 class="card-title"><%= blogTitle[i] %></h5>
+    <h6 class="card-subtitle mb-2 text-body-secondary"><%= blogId[i] %></h6>
+    <p class="card-text"><% if(blogContent[i].length<40){ %>
+        <%= blogContent[i] %>
+        <% } else {%>
+            open to see full Vlog
+            <% } %></p>
+            <h6 class="card-subtitle mb-2 text-body-secondary"><%= blogDate[i] %></h6>
+    <a href="/about" class="card-link">Blogs</a>
+    
+  </div>
+</div>
+</div>   
+<% }} else { %>
+   <div class="noblog">
+   <img  id="empty" src="empty.png">
+   <h1>NO Blog Available!!!!</h1>
+</div>
+    <% } %>
+
+
+<h3 style="margin: 10px;">Post your Vlog:</h3>
+<div class="post">
+   <form action="/submit" method="post">
+   <h4>Email</h4>
+  <div class="form-floating mb-1">
+    
+    <input type="email" class="form-control" id="floatingInputDisabled" placeholder="name@example.com" name="bemail" >
+    <label for="floatingInputDisabled">Email address</label>
+  </div>
+  <h4>Title</h4>
+  <div class="form-floating mb-1">
+    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextareaDisabled" name="btitle"></textarea>
+    <label for="floatingTextareaDisabled">Title</label>
+  </div>
+  <h4>Content</h4>
+  <div class="form-floating mb-1">
+    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2Disabled" style="height: 100px" name="bcontent"></textarea>
+    <label for="floatingTextarea2Disabled">Content</label>
+  </div>
+  <div class="form-floating mb-1">
+    <input class="btn btn-primary" type="submit" value="Submit">
+  </div>
+  </div>
+</form>
+  </div>
+
+    <%- include("partials/footer.ejs") %>

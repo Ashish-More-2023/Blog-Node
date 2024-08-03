@@ -1,0 +1,28 @@
+<%- include("partials/header.ejs") %>
+
+<% if(locals.blogTitle && locals.blogContent && locals.blogDate && locals.blogId ){ 
+
+  for(var i=0; i<blogId.length; i++){%>
+<div class="blogcontainer">     
+   <div class="card" style="width: 100%;">
+ <div class="card-body ">
+   <h5 class="card-title"><%= blogTitle[i] %></h5>
+   <h6 class="card-subtitle mb-2 text-body-secondary"><%= blogId[i] %></h6>
+   <p class="card-text">
+       <%= blogContent[i] %>
+
+           <h6 class="card-subtitle mb-2 text-body-secondary"><%= blogDate[i] %></h6>
+   <a href="/about" class="card-link">Blogs</a>
+   
+ </div>
+</div>
+</div>   
+<% }} else { %>
+  <div class="noblog">
+  <img  id="empty" src="empty.png">
+  <h1>NO Blog Available!!!!</h1>
+</div>
+   <% } %>
+
+
+<%- include("partials/footer.ejs") %>

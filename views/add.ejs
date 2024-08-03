@@ -1,0 +1,29 @@
+<%- include("partials/header.ejs") %>
+
+<h3 style="margin: 10px;">Post your Vlog:</h3>
+<div class="post">
+   <form action="/submit" method="post">
+   <h4>Email</h4>
+  <div class="form-floating mb-1">
+    
+    <input type="email" class="form-control" id="floatingInputDisabled" placeholder="name@example.com" name="bemail" >
+    <label for="floatingInputDisabled">Email address</label>
+  </div>
+  <h4>Title</h4>
+  <div class="form-floating mb-1">
+    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextareaDisabled" name="btitle"></textarea>
+    <label for="floatingTextareaDisabled">Title</label>
+  </div>
+  <h4>Content</h4>
+  <div class="form-floating mb-1">
+    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2Disabled" style="height: 100px" name="bcontent"></textarea>
+    <label for="floatingTextarea2Disabled">Content</label>
+  </div>
+  <div class="form-floating mb-1">
+    <input class="btn btn-primary" type="submit" value="Submit">
+  </div>
+  </div>
+</form>
+  </div>
+
+<%- include("partials/footer.ejs") %>
